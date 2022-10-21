@@ -9,9 +9,9 @@ app.use(express.json())
 app.use(cors())
 app.use(express.static("public"))
 
-// app.get('/', getHTML)
-// app.get('/css', getCSS)
-// app.get('/js', getJS)
+app.get('/', getHTML)
+app.get('/css', getCSS)
+app.get('/js', getJS)
 
 // include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
