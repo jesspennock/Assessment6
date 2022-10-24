@@ -22,10 +22,12 @@ test('Title shows up when page loads', async () => {
 
 test("Does clicking the draw button disply the div with id = choices", async () => {
     await driver.findElement(By.id("draw")).click()
-    await driver.findElement(By.id("choices")).isDisplayed()
-
+    const choicesDisplayed =  await driver.findElement(By.id("choices")).isDisplayed()
+    expect(choicesDisplayed).toBe(true)
 })
-test("Does clicking the add to duo button display the dive with id=player duo", async () => {
-    await driver.findElement(By.css("[class = 'bot-btn")).click()
-    await driver.findElement(By.id("player-duo")).isDisplayed()
+test("Does clicking the add to duo button display the div with id=player duo", async () => {
+    await driver.findElement(By.id("draw")).click()
+    await driver.findElement(By.className("bot-btn")).click()
+    const playerDuoDisplayed = await driver.findElement(By.id("player-duo")).isDisplayed()
+    expect(playerDuoDisplayed).toBe(true)
 })

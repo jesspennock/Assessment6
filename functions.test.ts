@@ -12,4 +12,16 @@ describe('shuffleArray should', () => {
         expect(shuffleArray(fakeArray).length).toEqual(fakeArray.length)
     )
 
+    test("are all the items in the array the same", () => {
+    let contentsEqual = true
+    const shuffledArray = shuffleArray(fakeArray)
+    for(let i = 0; i<fakeArray.length; i++){
+        if(shuffledArray.includes(fakeArray[i]) === false){
+            contentsEqual = false;
+         }
+
+    }
+    expect(contentsEqual).toBe(true)
+})
+
 })
